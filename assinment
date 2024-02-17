@@ -1,0 +1,433 @@
+  
+
+//  Exercise 1: Personal Message
+ typescript
+const name: string = "Eric";
+console.log(`Hello ${name}, would you like to learn some Python today?`);
+
+// ### Exercise 2: Name Cases
+const personName: string = "John Doe";
+console.log(personName.toLowerCase());
+console.log(personName.toUpperCase());
+console.log(personName.replace(/\b\w/g, c => c.toUpperCase())); // Title case
+
+// ### Exercise 3: Famous Quote
+
+const quote: string = "A person who never made a mistake never tried anything new.";
+const author: string = "Albert Einstein";
+console.log(`${author} once said, "${quote}"`);
+
+
+// ### Exercise 4: Famous Quote 2
+const famous_person: string = "Albert Einstein";
+const message: string = `${famous_person} once said, "A person who never made a mistake never tried anything new."`;
+console.log(message);
+
+
+// ### Exercise 5: Stripping Names
+let personNameWithWhitespace: string = "\t\n John Doe \n\t";
+console.log(personNameWithWhitespace);
+console.log(personNameWithWhitespace.trim());
+
+// ### Exercise 6: Number Eight
+console.log(5 + 3);
+console.log(11 - 3);
+console.log(4 * 2);
+console.log(16 / 2);
+
+
+// ### Exercise 7: Favorite Number
+const favoriteNumber: number = 7;
+console.log(`My favorite number is ${favoriteNumber}.`);
+
+// ### Exercise 8: Adding Comments
+// we add a comment in code that we don't want to execute in the code.
+// syntax for comments in Ts is "//" for a single line comment, but for plural comments we use "/* */"
+
+// ### Exercise 9: Names
+ 
+const names: string[] = ["John", "Doe", "Alice", "Bob"];
+names.forEach(name => console.log(name));
+ 
+
+// ### Exercise 10: Greetings
+
+names.forEach(name => console.log(`Hello ${name}, how are you?`));
+
+// ### Exercise 11: Your Own Array
+
+const transportation: string[] = ["car", "bicycle", "motorcycle"];
+transportation.forEach(item => console.log(`I would like to own a ${item}.`));
+
+// ### Exercise 12: Guest List
+const guestList: string[] = ["Albert Einstein", "Marie Curie", "Isaac Newton"];
+guestList.forEach(guest => console.log(`Dear ${guest}, you are invited to dinner.`));
+ 
+
+// ### Exercise 13: Changing Guest List
+ 
+console.log(`${guestList.pop()} can't make it to the dinner.`);
+guestList.push("Nikola Tesla");
+guestList.forEach(guest => console.log(`Dear ${guest}, you are invited to dinner.`));
+
+// ### Exercise 14: More Guests
+ 
+console.log("Good news! We found a bigger dinner table.");
+guestList.unshift("Galileo Galilei");
+guestList.splice(Math.floor(guestList.length / 2), 0, "Leonardo da Vinci");
+guestList.push("Ada Lovelace");
+guestList.forEach(guest => console.log(`Dear ${guest}, you are invited to dinner.`));
+ 
+
+// ### Exercise 15: Shrinking Guest List
+ 
+console.log("Sorry, the new dinner table won't arrive in time.");
+console.log("I can only invite two guests for dinner.");
+while (guestList.length > 2) {
+    console.log(`${guestList.pop()}, I'm sorry but I can't invite you to dinner.`);
+}
+guestList.forEach(guest => console.log(`Dear ${guest}, you are still invited to dinner.`));
+guestList.length = 0;
+console.log("Now the guest list is empty:", guestList);
+ 
+
+// ### Exercise 16: Seeing the World
+ 
+const placesToVisit: string[] = ["Paris", "Tokyo", "Rome", "Rio de Janeiro", "Sydney"];
+console.log("Original order:", placesToVisit.join(", "));
+console.log("Alphabetical order:", placesToVisit.slice().sort().join(", "));
+console.log("Original order:", placesToVisit.join(", "));
+console.log("Reverse alphabetical order:", placesToVisit.slice().sort().reverse().join(", "));
+console.log("Original order:", placesToVisit.join(", "));
+placesToVisit.reverse();
+console.log("Reversed order:", placesToVisit.join(", "));
+placesToVisit.reverse();
+console.log("Back to original order:", placesToVisit.join(", "));
+console.log("Sorted order:", placesToVisit.slice().sort().join(", "));
+console.log("Reverse sorted order:", placesToVisit.slice().sort().reverse().join(", "));
+ 
+
+// ### Exercise 17: Dinner Guests
+console.log(`There are ${guestList.length} people invited to dinner.`);
+ 
+
+// ### Exercise 18: Think of something you could store in an array
+const mountains: string[] = ["Everest", "K2", "Kangchenjunga", "Lhotse", "Makalu"];
+console.log("Mountains:", mountains);
+ 
+
+// ### Exercise 19: Think of something you could store in an Object
+interface Transportation {
+    mode: string;
+    brand: string;
+    color: string;
+}
+
+const vehicles: Transportation[] = [
+    { mode: "Car", brand: "Toyota", color: "Red" },
+    { mode: "Motorcycle", brand: "Honda", color: "Black" },
+    { mode: "Bicycle", brand: "Trek", color: "Blue" }
+];
+
+console.log("Vehicles:", vehicles);
+ 
+
+// ### Exercise 20: Intentional Error
+const arr: number[] = [1, 2, 3];
+console.log(arr[3]); // Accessing an out-of-bounds index intentionally
+// This will throw an error because the index 3 is out of bounds
+ 
+
+// ### Exercise 21: Conditional Tests
+ 
+let car: string = 'subaru';
+console.log("Is car == 'subaru'? I predict True.");
+console.log(car == 'subaru');
+
+// Add more conditional tests as needed
+ 
+
+// ### Exercise 22: More Conditional Tests
+ 
+let num1: number = 5;
+let num2: number = 10;
+
+// Test for equality and inequality with strings
+console.log("Equality test:", "hello" === "hello"); // True
+console.log("Inequality test:", "hello" !== "world"); // True
+
+// Tests using the lower case function
+console.log("Lowercase test:", "HELLO".toLowerCase() === "hello"); // True
+
+// Numerical tests involving equality and inequality, greater than and less than, greater than or equal to, and less than or equal to
+console.log("Numerical equality test:", num1 === num1); // True
+console.log("Numerical inequality test:", num1 !== num2); // True
+console.log("Greater than test:", num2 > num1); // True
+console.log("Less than test:", num1 < num2); // True
+console.log("Greater than or equal to test:", num2 >= num1); // True
+console.log("Less than or equal to test:", num1 <= num2); // True
+
+// Tests using "and" and "or" operators
+console.log("And operator test:", (num1 === 5) && (num2 === 10)); // True
+console.log("Or operator test:", (num1 === 5) || (num2 === 5)); // True
+
+// Test whether an item is in an array
+const fruits: string[] = ['apple', 'banana', 'orange'];
+console.log("Array includes test:", fruits.includes('banana')); // True
+
+// Test whether an item is not in an array
+console.log("Array does not include test:", !fruits.includes('grape')); // True
+ 
+
+ 
+
+// ### Exercise 23: Alien Colors #1
+const alien_color1: string = 'green';
+
+if (alien_color1 === 'green') {
+    console.log("Player just earned 5 points.");
+}
+
+
+// ### Exercise 24: Alien Colors #2
+ 
+const alien_color2: string = 'red';
+
+if (alien_color2 === 'green') {
+    console.log("Player just earned 5 points for shooting the alien.");
+} else {
+    console.log("Player just earned 10 points.");
+}
+ 
+
+// ### Exercise 25: Alien Colors #3
+ 
+const alien_color3: string = 'yellow';
+
+if (alien_color3 === 'green') {
+    console.log("Player earned 5 points.");
+} else if (alien_color3 === 'yellow') {
+    console.log("Player earned 10 points.");
+} else if (alien_color3 === 'red') {
+    console.log("Player earned 15 points.");
+}
+ 
+
+// ### Exercise 26: Stages of Life
+const age: number = 25;
+
+if (age < 2) {
+    console.log("The person is a baby.");
+} else if (age >= 2 && age < 4) {
+    console.log("The person is a toddler.");
+} else if (age >= 4 && age < 13) {
+    console.log("The person is a kid.");
+} else if (age >= 13 && age < 20) {
+    console.log("The person is a teenager.");
+} else if (age >= 20 && age < 65) {
+    console.log("The person is an adult.");
+} else {
+    console.log("The person is an elder.");
+}
+
+
+// ### Exercise 27: Favorite Fruit
+ 
+const favorite_fruits: string[] = ['banana', 'apple', 'orange'];
+if (favorite_fruits.includes('banana')) {
+    console.log('You really like bananas!');
+}
+if (favorite_fruits.includes('apple')) {
+    console.log('You really like apples!');
+}
+if (favorite_fruits.includes('orange')) {
+    console.log('You really like oranges!');
+}
+ 
+
+// ### Exercise 28: Hello Admin
+ 
+const usernames: string[] = ['admin', 'john', 'jane', 'doe', 'eric'];
+usernames.forEach(username => {
+    if (username === 'admin') {
+        console.log(`Hello admin, would you like to see a status report?`);
+    } else {
+        console.log(`Hello ${username}, thank you for logging in again.`);
+    }
+});
+ 
+
+// ### Exercise 29: No Users
+
+if (usernames.length === 0) {
+    console.log("We need to find some users!");
+} else {
+    usernames.forEach(username => {
+        console.log(`Hello ${username}, thank you for logging in again.`);
+    });
+    usernames.length = 0;
+    console.log("The list of usernames is now empty.");
+}
+ 
+
+// ### Exercise 30: Checking Usernames
+ 
+const current_users: string[] = ['john', 'jane', 'doe', 'admin', 'eric'];
+const new_users: string[] = ['joe', 'jill', 'admin', 'mary', 'susan'];
+
+new_users.forEach(user => {
+    if (current_users.map(u => u.toLowerCase()).includes(user.toLowerCase())) {
+        console.log(`Sorry, ${user} is already taken. Please enter a new username.`);
+    } else {
+        console.log(`${user} is available.`);
+    }
+});
+  
+// ### Exercise 31: Ordinal Numbers.
+ 
+const numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+numbers.forEach(number => {
+    let ordinal: string;
+    switch (number) {
+        case 1:
+            ordinal = "1st";
+            break;
+        case 2:
+            ordinal = "2nd";
+            break;
+        case 3:
+            ordinal = "3rd";
+            break;
+        default:
+            ordinal = number + "th";
+    }
+    console.log(ordinal);
+});
+ 
+// ### Exercise 32: Pizzas
+ 
+const pizzas: string[] = ['Pepperoni', 'Margherita', 'Supreme'];
+pizzas.forEach(pizza => console.log(`I like ${pizza} pizza.`));
+console.log("I really love pizza!");
+ 
+
+// ### Exercise 33: Animals
+ 
+const animals: string[] = ['Dog', 'Cat', 'Rabbit'];
+animals.forEach(animal => console.log(`A ${animal} would make a great pet.`));
+console.log("Any of these animals would make a great pet!");
+ 
+
+// ### Exercise 34: T-Shirt
+ 
+function make_shirt(size: string, message: string): void {
+    console.log(`Shirt size: ${size}, Message: ${message}`);
+}
+
+make_shirt("Large", "I love TypeScript");
+make_shirt("Medium", "I love TypeScript");
+make_shirt("Small", "Hello World");
+ 
+
+// ### Exercise 35: Large Shirts
+ 
+function make_shirt(size: string = "Large", message: string = "I love TypeScript"): void {
+    console.log(`Shirt size: ${size}, Message: ${message}`);
+}
+
+make_shirt();
+make_shirt("Medium");
+make_shirt("Small", "Hello World");
+ 
+
+// ### Exercise 36: Cities
+ 
+function describe_city(city: string, country: string = "USA"): void {
+    console.log(`${city} is in ${country}.`);
+}
+
+describe_city("Karachi", "Pakistan");
+describe_city("Los Angeles");
+describe_city("New York");
+ 
+
+// ### Exercise 37: City Names
+ 
+function city_country(city: string, country: string): string {
+    return `${city}, ${country}`;
+}
+
+console.log(city_country("Lahore", "Pakistan"));
+console.log(city_country("Tokyo", "Japan"));
+console.log(city_country("Paris", "France"));
+ 
+
+// ### Exercise 38: Album
+ 
+function make_album(artist: string, title: string, tracks?: number): { artist: string, title: string, tracks?: number } {
+    const album = { artist, title };
+    if (tracks) {
+        album.tracks = tracks;
+    }
+    return album;
+}
+
+console.log(make_album("Taylor Swift", "1989"));
+console.log(make_album("Ed Sheeran", "Divide", 12));
+console.log(make_album("Beyonce", "Lemonade", 14));
+ 
+
+// ### Exercise 39: Magicians
+ 
+function show_magicians(magicians: string[]): void {
+    magicians.forEach(magician => console.log(magician));
+}
+
+show_magicians(['Harry Houdini', 'David Blaine', 'Penn Jillette']);
+ 
+
+// ### Exercise 40: Great Magicians
+
+function make_great(magicians: string[]): string[] {
+    return magicians.map(magician => `the Great ${magician}`);
+}
+
+const great_magicians = make_great(['Harry Houdini', 'David Blaine', 'Penn Jillette']);
+show_magicians(great_magicians);
+ 
+
+// ### Exercise 41: Unchanged Magicians
+ 
+const original_magicians: string[] = ['Harry Houdini', 'David Blaine', 'Penn Jillette'];
+const updated_magicians: string[] = make_great([...original_magicians]);
+show_magicians(original_magicians);
+show_magicians(updated_magicians);
+ 
+
+// ### Exercise 42: Sandwiches
+ 
+function make_sandwich(...items: string[]): void {
+    console.log(`You ordered a sandwich with: ${items.join(', ')}.`);
+}
+
+make_sandwich("Ham", "Cheese", "Lettuce");
+make_sandwich("Turkey", "Swiss", "Tomato", "Mayonnaise");
+make_sandwich("Peanut Butter", "Jelly");
+ 
+
+// ### Exercise 43: Cars
+ 
+function car_info(manufacturer: string, model: string, ...options: string[]): void {
+    const car: any = { manufacturer, model };
+    options.forEach(option => {
+        const [key, value] = option.split(":");
+        car[key.trim()] = value.trim();
+    });
+    console.log(car);
+}
+
+car_info("Toyota", "Camry", "color: Red", "year: 2023");
+car_info("Tesla", "Model S", "color: Black", "autopilot: Yes", "range: 300 miles");
+ 
+
+ 

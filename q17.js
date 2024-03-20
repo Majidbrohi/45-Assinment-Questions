@@ -1,0 +1,10 @@
+//todo--  Queston no.17 (Shrinking guest list);
+var guestList = ["Maj.Zarrar Haider", "Cap.Anziq Majid", "Abid Pamhwar ", "Shaman shoomro", "Jagga Dako", "Commander Khoala bint e Asfar"];
+console.log("Sorry,The new dinner table will not arrive on time for the dinner");
+console.log("We are really very sorry, we just have space of two guests.");
+while (guestList.length > 2) {
+    console.log("".concat(guestList.pop(), " sorrry i can't invite you."));
+}
+guestList.forEach(function (guest) { return console.log("Dear ".concat(guest, " You're Still Invited")); });
+guestList.length = 0;
+console.log("Now the guestList is empty", guestList);
